@@ -1,0 +1,47 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.space{
+    width: 100%;
+    height:220px;
+background-color: rgb(22, 20, 20);
+/* color: blue; */
+}
+
+.college{
+
+    width: 100%; 
+    height:800px; 
+    border: 1px solid white;
+    /* margin: 10px;  */
+    /* padding: 5px;  */
+}
+/* styles.css */
+
+.image-container {
+    position: relative;
+    width:100% ;
+    display: inline-block; /* Ensures the container takes the size of the image */
+}
+
+.overlay {
+    position: absolute;
+    top: 85%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgba(54, 139, 30, 0.5); /* Semi-transparent background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    width:70%
+}
+.over{
+    margin-top: 20px;
+
+}
+
+
