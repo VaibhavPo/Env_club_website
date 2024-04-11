@@ -1,6 +1,7 @@
 .navbar{
     position: relative;
-    background-color: white;
+    /* background-color: white; */
+    color: white;
     transition: height 0.3s ease-in-out;
     padding: 30px 0 15px 0;
     z-index: 1000;
@@ -17,6 +18,9 @@
 }
 .nav-links {
     font-weight: 300;
+    /* color: white; */
+}
+.nav-links a{ color: white;
 }
 .nav-links ul{
     list-style: none;

@@ -19,13 +19,38 @@
 
 
 </head>
-  <body>
-    <div class="space"></div>
-    <div class="image-container">
-      <img src="ayush.jpg" alt="" class="college">
-      <div class="overlay"> <h1>ABOUT US</h1>
-       <div class="over"> <h2>Exploring the possibilities of THDC-ihet education</h2></div>
-      </div>
+
+<body>
+    <div class="navbar bg-color" id="navbar">
+        <div class="navbar-content">
+            <div> <a href="home.html" class="logo">
+                    <img src="Assets/logo.png" alt="Logo" width="120" height="50" id="logo">
+                </a>
+
+            </div>
+
+            <div class="nav-links">
+                <ul>
+                    <!-- <li><a href="#service" class="slider-box-big">Services</a></li>
+                    <li><a href="#" class="slider-box-big">About</a></li>
+                    <li><a href="#contact" class="slider-box-big">Contact</a></li> -->
+                    <li><a href="See more quiz.php">Quiz</a></li>
+                    <li><a href="#service">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+            </div>
+
+            <div class="menu-icon" id="menu-icon">
+                <div id="show"><i class="fa-solid fa-bars fa-bounce" style="color: #46a078;"></i></div>
+                <div id="hide" style="display: none;"><i class="fa-solid fa-xmark" style="color: #46a078;"></i>
+                </div>
+
+
+            </div>
+        </div>
+
     </div>
 
     <section id="intro" class="sec1">
@@ -43,72 +68,65 @@
         </div> -->
         <div class="slider-container" onmouseenter="showChild()" onmouseleave="hideChild()">
             <div class="slider">
-              <img src="home_img/image1.png" alt="Image 1">
-              <img src="home_img/image2.png" alt="Image 2">
-              <img src="home_img/image3.png" alt="Image 3">
+                <img src="home_img/image1.png" alt="Image 1">
+                <img src="home_img/image2.png" alt="Image 2">
+                <img src="home_img/image3.png" alt="Image 3">
             </div>
-            <button class="prev" id= "prev_B" onclick="prevSlide()"><i class="fa-solid fa-chevron-left fa-2xl"></i></button>
-            <button class="next" id="next_B" onclick="nextSlide()"><i class="fa-solid fa-chevron-right fa-2xl"></i></button>
-          </div>
-
-<!-- 
+            <button class="prev" id="prev_B" onclick="prevSlide()"><i
+                    class="fa-solid fa-chevron-left fa-2xl"></i></button>
+            <button class="next" id="next_B" onclick="nextSlide()"><i
+                    class="fa-solid fa-chevron-right fa-2xl"></i></button>
+        </div>
+        <div class="overlay">
+            <h3 style="color: white; text-align: left;    line-height: 10.8px;">Enviroment Club</h1>
+                <p style="color: white; text-align: left;">Exploring the possibilities of THDC-ihet education</h2>
+        </div>
+        <!-- 
         <div>
             <img src="Assets/Image/1st_sec.webp" class="intro-img">
         </div> -->
     </section>
     <section id="2nd_sec" class="sec2">
         <div class="featuredIn">
-            <div class="featuredItem">Feature In</div>
+            <div class="featuredItem"><b>Hierarchy</b></div>
             <div class="featuredItem">
-                <img src="Assets/FeaturedIn/1.webp" alt="Featured Logo 1">
+                Uttarakhand Technical University
+                <!-- <img src="Assets/FeaturedIn/1.webp" alt="Featured Logo 1" > -->
             </div>
             <div class="featuredItem">
-                <img src="Assets/FeaturedIn/2.webp" alt="Featured Logo 2">
+                THDC-IHET
+                <!-- <img src="Assets/FeaturedIn/2.webp" alt="Featured Logo 2"> -->
             </div>
             <div class="featuredItem">
-                <img src="Assets/FeaturedIn/3.webp" alt="Featured Logo 3">
+                Enviroment Club
+                <!-- <img src="Assets/FeaturedIn/3.webp" alt="Featured Logo 3"> -->
             </div>
         </div>
         <div class="review-container">
             <div class="review-card">
                 <div class="review-rating google-rating">
-                    4.8<br>
-                    ★★★★★
+                    <img src="Assets/FeaturedIn/1.webp" alt="Featured Logo 1">
                 </div>
-                <div class="review-count">
-                    2,394 Ratings
-                </div>
-                <div class="review-source">
-                    Google Reviews
-                </div>
+
+                <div class="review-source"><a href="https://uktech.ac.in/en">Our University</a>
+                     </div>
             </div>
 
             <div class="review-card">
-                <div class="review-rating a-plus-rating">
-                    A+
+                <div class="review-rating google-rating">
+                    <img src="Assets/FeaturedIn/2.webp" alt="Featured Logo 2" height="200" width="200">
                 </div>
-                <div class="review-count">
-                    ★★★★★
-                </div>
-                <div class="review-source">
-                    125 Reviews
-                </div>
-                <div class="review-rating bbb-rating">
-                    BBB Rating
-                </div>
-            </div>
 
-            <div class="review-card">
-                <div class="review-title">
-                    Hear from Our Satisfied Students
+                <div class="review-source">
+                    <a href="https://thdcihet.ac.in/">Our Institute</a> </div>
+            </div>            <div class="review-card">
+                <div class="review-rating google-rating">
+                    <img src="Assets/FeaturedIn/3.webp" alt="Featured Logo 3" height="200" width="250">
                 </div>
-                <div class="review-content">
-                    Jessica Simon<br>
-                    Spectrum classes took my understanding of organic chemistry to the next level. The online learning
-                    environment is intuitive and the tutors are knowledgeable and supportive.
-                </div>
+
+                <div class="review-source">
+                   <a href="#">Our Club</a>  </div>
             </div>
-        </div>
 
     </section>
     <section class="sec1" id="service">
@@ -292,8 +310,8 @@
             <p>Enter your email address to subscribe to our newsletter:</p>
             <div class="subscribe-form">
                 <form action="Subscribe.php" enctype="multipart/form-data" method="post">
-                <input type="email" id="email" name="email" placeholder="Your email address">
-                <button class="primary padd-10-10">Subscribe</button>
+                    <input type="email" id="email" name="email" placeholder="Your email address">
+                    <button class="primary padd-10-10">Subscribe</button>
                 </form>
             </div>
         </section>
