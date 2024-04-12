@@ -16,6 +16,42 @@
     <link rel="stylesheet" href="navbar2.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,700,600&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .carousel-container {
+        perspective: 1000px;
+        margin: 60px auto 250px auto  ;
+        width: 300px; /* Adjust container width */
+        height: 200px; /* Adjust container height */
+      }
+      
+      .carousel {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        animation: rotateCarousel 40s infinite linear; /* Adjust duration and timing function */
+      }
+      
+      .card {
+        position: absolute;
+        width: 150px; /* Adjust card width */
+        height: 250px; /* Adjust card height */
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      @keyframes rotateCarousel {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(360deg);
+        }
+      }
+    </style>
 
 
 </head>
@@ -222,7 +258,43 @@
             <h2 class="section-heading">Student Testimonials </h2>
             <h5 style="text-align: center; color: #7995c0;">Hear What Our Students Have to Say About Us</h5>
 
-            <div class="testimonials-grid">
+                  
+                  <!-- Add more cards as needed -->
+                </div>
+              </div>
+              
+            <div class="carousel-container">
+                <div class="carousel">
+                  <div class="card">
+                    <img src="Assets/Image/Testimonials/testimonial1.webp" alt="Sarah thomson"
+                    class="testimonial-image">
+                    <p class="testimonial-author">JOHN CARTER</p>
+                    <p>This is the content of Card 1</p>
+                  </div>
+                  <div class="card">
+                    <img src="Assets/Image/Testimonials/testimonial1.webp" alt="Sarah thomson"
+                    class="testimonial-image">
+                    <p class="testimonial-author">JOHN CARTER</p>
+                    <p>This is the content of Card 2</p>
+                  </div>
+                  <div class="card">
+                    <img src="Assets/Image/Testimonials/testimonial1.webp" alt="Sarah thomson"
+                    class="testimonial-image">
+                    <p class="testimonial-author">JOHN CARTER</p>
+                    <p>This is the content of Card 3</p>
+                  </div>
+                  <div class="card">                    
+                    <img src="Assets/Image/Testimonials/testimonial1.webp" alt="Sarah thomson"
+                    class="testimonial-image">
+                    <p class="testimonial-author">JOHN CARTER</p>
+                    <p>This is the content of Card 4</p>
+                  </div>
+                </div>
+            </div>
+            
+                  
+
+            <!-- <div class="testimonials-grid">
                 <div class="testimonial">
                     <div class="testimonial-rating">
                         <span class="rating-stars"><img src="Assets/star.png" alt=""></img><img src="Assets/star.png"
@@ -257,7 +329,7 @@
                     </div>
 
                 </div>
-                <!-- Repeat the above structure for other pairs of testimonials -->
+               
 
                 <div class="testimonial">
                     <div class="testimonial-rating">
@@ -293,9 +365,33 @@
                     </div>
 
 
-                </div>
+                </div> -->
         </section>
     </section>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const cards = document.querySelectorAll('.card');
+        const cardCount = cards.length;
+        
+        function updateCarousel() {
+          const angle = 360 / cardCount;
+          cards.forEach((card, index) => {
+            const rotateY = angle * index;
+            if (angle > 180) {
+              card.style.display = 'none'; // Hide the card
+            } else {
+              card.style.display = 'block'; // Show the card
+              card.style.transform = `rotateY(${rotateY}deg) translateZ(200px)`;
+            }
+          });
+        }
+        
+        updateCarousel();
+        
+        
+        
+          </script>
 
     <section class="sec2">
         <section class="newsletter-section">
