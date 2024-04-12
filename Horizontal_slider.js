@@ -12,8 +12,9 @@ let slideIndex = 0;
             document.getElementById("next_B").style.display = "none";
             document.getElementById("prev_B").style.display = "none";
 
-        }, 1000); // Hide after 2 seconds
+        },500); // Hide after 2 seconds
     }
+    setInterval(nextSlide, 5000);
 
     function showSlide(n) {
       const slides = document.querySelectorAll('.slider img');

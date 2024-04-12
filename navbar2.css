@@ -22,6 +22,12 @@
 }
 .nav-links a{ color: white;
 }
+.nav-links a:hover{
+    /* transition:  30px 0.3s ease-in-out; */
+    font-size: 19px;
+    /* text-transform:capitalize; */
+    color: #33def4;
+}
 .nav-links ul{
     list-style: none;
     display: flex;

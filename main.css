@@ -13,6 +13,7 @@ body {
     color: #003C43;
 }
 
+
 .overlay {
     /* text-align: center; */
     position: absolute;
@@ -48,9 +49,9 @@ a {
 
 
 a:hover {
-    color: rgb(73, 160, 120);
+    color:#269ead;
     /* Text color when hovering over links */
-    text-decoration: underline;
+    /* text-decoration: underline; */
 
 }
 .bg-color{
@@ -388,8 +389,10 @@ p {
     height: 30px;
 }
 
-.images img {
-    max-width: 75%;
+.proImg {
+    /* max-width: 35%; */
+    margin-top: 8%;
+    width: 30%;
     height: auto;
     border-radius: 2%;
 
