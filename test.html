@@ -1,107 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Image Carousel</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <style>
-.carousel-container {
-  perspective: 1000px;
-  margin: 50px auto;
-  width: 300px; /* Adjust container width */
-  height: 200px; /* Adjust container height */
-}
-
-.carousel {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  animation: rotateCarousel 15s infinite linear; /* Adjust duration and timing function */
-}
-
-.card {
-  position: absolute;
-  width: 150px; /* Adjust card width */
-  height: 250px; /* Adjust card height */
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes rotateCarousel {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
-}
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Team</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: black;
+    }
+    .team-container {
+        max-width: 1200px;
+        margin: 50px auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .team-member {
+        text-align: center;
+        flex-basis: 30%;
+        position: relative;
+    }
+    .team-member img {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        /* border-radius: 50%; */
+        object-fit: fit;
+        margin-bottom: 10px;
+        z-index: 2; /* Adjusted z-index */
+    }
+    .member-bg {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 62%;
+        background-color: rgba(0, 0, 0, 0.2);
+        /* border-radius: 50%; */
+        transition: background-color 0.3s ease;
+        z-index: 1; /* Adjusted z-index */
+    }
+    /* .team-member:hover .member-bg {
+        background-color: rgba(0, 0, 0, 0.5); 
+    } */
+    .team-member h3,
+    .team-member p {
+        position: relative;
+        z-index: 3; /* Adjusted z-index */
+        margin: 0;
+    }
+</style>
 </head>
 <body>
-  <div class="carousel-container">
-    <div class="carousel">.
-      <img src="home_img/image1.png" alt="" height="300"width="300" style="object-fit: cover;" class="card">
-      <img src="home_img/image2.png" alt="" height="300"width="300" style="object-fit: cover;" class="card">
-
-      <img src="home_img/image3.png" alt="" height="300"width="300" style="object-fit: cover;" class="card">
-
-      <img src="home_img/image4.png" alt="" height="300"width="300" style="object-fit: cover;" class="card">
-
-      <!-- <div class="card">
-        <h2>Card 1</h2>
-        <p>This is the content of Card 1</p>
-        <img src="home_img/image1.png" alt="" height="300"width="300" style="object-fit: cover;">
-      </div>
-      <div class="card">
-        <h2>Card 2</h2>
-        <p>This is the content of Card 2</p>
-      </div>
-      <div class="card">
-        <h2>Card 3</h2>
-        <p>This is the content of Card 3</p>
-      </div>
-      <div class="card">
-        <h2>Card 4</h2>
-        <p>This is the content of Card 4</p>
-      </div> -->
-
-      
-      
-      <!-- Add more cards as needed -->
+  https://www.atlassian.com/company/people
+<div class="team-container">
+    <div class="team-member">
+        <div class="member-bg"></div>
+        <img src="Team/member1.png" alt="Person 1">
+        <h3>John Doe</h3>
+        <p>CEO</p>
     </div>
-  </div>
-  
-  
+    <div class="team-member">
+        <div class="member-bg"></div>
+        <img src="Team/member2.png" alt="Person 2">
+        <h3>Jane Smith</h3>
+        <p>CTO</p>
+    </div>
+    <div class="team-member">
+        <div class="member-bg"></div>
+        <img src="Team/member1.png" alt="Person 3">
+        <h3>Michael Johnson</h3>
+        <p>COO</p>
+    </div>
+</div>
 
-  <script>
-const carousel = document.querySelector('.carousel');
-const cards = document.querySelectorAll('.card');
-const cardCount = cards.length;
-
-function updateCarousel() {
-  const angle = 360 / cardCount;
-  cards.forEach((card, index) => {
-    const rotateY = angle * index;
-    if (angle > 180) {
-      card.style.display = 'none'; // Hide the card
-    } else {
-      card.style.display = 'block'; // Show the card
-      card.style.transform = `rotateY(${rotateY}deg) translateZ(200px)`;
-    }
-  });
-}
-
-updateCarousel();
-
-
-
-  </script>
 </body>
 </html>
