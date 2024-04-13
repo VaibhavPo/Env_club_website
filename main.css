@@ -414,13 +414,15 @@ p {
 .team{
     /* margin: 0; */
     display: flex;
+    flex-direction: row;
     align-items:center ;
     justify-content:center;
 }
 .team img{
+    
     margin: 15px;
-    width: 550px;
-    height: 400px;
+    width: 80%;
+    height: 60%;
 }
 
 .team-member {
@@ -521,6 +523,24 @@ p {
 
 
 @media screen and (max-width: 800px) {
+.overlay{
+    top: 50%;
+    left: 50%;
+    width: 70%;
+
+}
+ .team img{
+    /* display: flex; */
+    /* align-items:center ;
+    justify-content:center; */
+    /* flex-direction: column; */
+    max-width: 300px;
+    max-height: 200px;
+ }
+ .team{
+    display: flex;
+    flex-direction: column;
+ }
 
 
     .features ul,
