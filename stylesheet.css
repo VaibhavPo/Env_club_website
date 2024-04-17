@@ -28,8 +28,8 @@
 
 .overlay {
     position: absolute;
-    top: 94% !important;
-    left:58% !important;
+    top: 99% !important;
+    left:62% !important;
     transform: translate(-50%, -50%);
     color: white;
     font-size: 24px;
@@ -37,7 +37,7 @@
     background-color: rgba(54, 139, 30, 0.5); /* Semi-transparent background */
     padding: 10px 20px;
     border-radius: 5px;
-    width:70%
+    width:78% !important;
 }
 .over{
     margin-top: 10px;
