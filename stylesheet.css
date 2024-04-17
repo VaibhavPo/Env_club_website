@@ -28,8 +28,8 @@
 
 .overlay {
     position: absolute;
-    top: 94%;
-    left:58%;
+    top: 94% !important;
+    left:58% !important;
     transform: translate(-50%, -50%);
     color: white;
     font-size: 24px;
