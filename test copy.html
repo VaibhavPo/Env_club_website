@@ -7,13 +7,9 @@
   <title>My Team</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,700,600&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
   <link rel="stylesheet" href="footer.css">
-
-  <!-- <link rel="stylesheet" href="main.css"> -->
   <style>
     body {
-
       font-size: 18px;
       font-family: "Poppins", sans-serif;
       font-weight: 300;
@@ -29,13 +25,15 @@
       background-color: #135D66 !important;
       color: white;
       display: flex;
-
+      justify-content: center;
+      align-items: center;
+      padding: 8px 0 3px 0;
     }
 
     .gallery {
-      margin: 50px 10px 50px 30px;
+      margin: 50px auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 10px;
     }
 
@@ -54,13 +52,9 @@
 
     hr {
       border: none;
-      /* Remove the default border */
       height: 1px;
-      /* Set the height of the line */
       background-color: rgba(0, 0, 0, 0.36);
-      /* Set the color of the line */
-      margin: 10% 80px 10px 80px;
-      /* Add some spacing above and below the line */
+      margin: 5% 10%;
     }
 
     h1 {
@@ -70,20 +64,30 @@
       font-weight: 500;
       line-height: 40px;
       margin-top: 30px;
-      /* Remove default top margin */
+    }
+
+    @media screen and (max-width: 768px) {
+      .bg-color {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .gallery {
+        margin: 20px auto;
+      }
+      h2 {
+        margin-left: 0;
+      }
 
     }
   </style>
 </head>
 
 <body>
-  <div class=" bg-color" style=" padding: 8px 0 3px 0;">
-
+  <div class=" bg-color">
     <a href="index.html" class="logo">
-      <img src="Assets/logo.png" alt="Logo" width="120" height="60" id="logo" style="margin-left: 100%;">
+      <img src="Assets/logo.png" alt="Logo" width="80" height="80" id="logo" style="margin-left: 100%;">
     </a>
     <h2 style="margin-left: 35%;">Enviroment Club</h2>
-
   </div>
   <h1>Photo Gallery</h1>
   <p>Explore us</p>
@@ -103,32 +107,29 @@
     <img src="ImgGallery/image12.png" alt="Photo 5">
     <img src="ImgGallery/image13.png" alt="Photo 6">
     <img src="ImgGallery/image14.png" alt="Photo 7">
-    <!-- Add more images here -->
   </div>
- 
-  <!-- Here footer starts -->
+
   <hr>
   <footer class="footer">
-
     <div class="social-icons">
-      <div class="icon1"> <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-      </div>
-      <div class="icon2"> <a href="https://www.instagram.com/environment._.thdcihet?igsh=aml3ZGVzeHh5YXd0"
-          class="social-icon"><i class="fab fa-instagram"></i></a>
-        <a href="" class="social-icon"><i class="fab fa-youtube"></i></a>
-      </div>
+        <div class="icon1"> <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="icon2"> <a href="https://www.instagram.com/environment._.thdcihet?igsh=aml3ZGVzeHh5YXd0" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="" class="social-icon"><i
+                    class="fab fa-youtube"></i></a>
+        </div>
 
-      <!-- Add more social media icons as needed -->
+        <!-- Add more social media icons as needed -->
     </div>
     <div class="footerText">
-      Thank You For visiting us.
+        Thank You For visiting us.
 
     </div>
     <div class="footerText" id="contact">
-      <a href="mailto:bc@gmail.com" class="mail">For support</a>
+        <a href="mailto:environmentclub@thdcihet.ac.in" class="mail">For support: environmentclub@thdcihet.ac.in</a>
     </div>
-  </footer>
+</footer>
 </body>
 
 </html>

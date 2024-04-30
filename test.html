@@ -36,6 +36,7 @@
       max-width: 1200px;
       margin: 50px auto;
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
     }
 
@@ -110,6 +111,20 @@
     /* Remove default top margin */
 
 }
+@media screen and (max-width: 768px){
+  .team-container{
+    flex-direction: column;
+    max-width: 500px;
+      /* margin: 20px 10px; */
+  }
+  .bg-color{
+    margin: 0,0,10px,0;
+  }
+  footer{
+    overflow-x: hidden;
+  }
+
+}
     
   </style>
 </head>
@@ -134,13 +149,13 @@
       <p>Director</p>
     </div>
     <div class="team-member">
-      <div class="member-bg" style="background-color: #5CF0C6;"><img src="Team/faculty.png" class="SuppImg"></div>
+      <div class="member-bg" style="background-color: #FFC000;"><img src="Team/faculty.png" class="SuppImg"></div>
       <img src="Team/member2.png" alt="Person 2">
       <h3>Dr. Kavita Tariyal</h3>
       <p>Faculty</p>
     </div>
     <div class="team-member">
-      <div class="member-bg" style="background-color: #5CF0C6;"><img src="Team/coord.png" class="SuppImg"></div>
+      <div class="member-bg" style="background-color: #FFC000;"><img src="Team/coord.png" class="SuppImg"></div>
       <img src="Team/member3.png" alt="Person 3">
       <h3>Akshat Kestwal</h3>
       <p>Student Coordinator</p>
@@ -148,13 +163,13 @@
   </div>
   <div class="team-container">
     <div class="team-member">
-      <div class="member-bg" style="background-color: #FFC000;"><img src="Team/coord2.png" class="SuppImg"></div>
-      <img src="Team/member4.png" alt="Person 1">
+      <div class="member-bg" style="background-color: #5CF0C6;"><img src="Team/coord2.png" class="SuppImg"></div>
+      <img src="Team/member10a.png" alt="Person 1">
       <h3>Anshika Bhatt</h3>
       <p>Aaranya Coordinator</p>
     </div>
     <div class="team-member">
-      <div class="member-bg" style="background-color: #FFC000;"><img src="Team/coord2.png" class="SuppImg"></div>
+      <div class="member-bg" style="background-color: #5CF0C6;"><img src="Team/coord2.png" class="SuppImg"></div>
       <img src="Team/member5.png" alt="Person 2">
       <h3>Shivansh Negi</h3>
       <p>Sankalp Coordinator</p>
@@ -176,38 +191,37 @@
     <div class="team-member">
       <div class="member-bg" style="background-color: #FFB8A6;"><img src="Team/volen.png" class="SuppImg"></div>
       <img src="Team/member8.png" alt="Person 2">
-      <h3>Jane Smith</h3>
+      <h3>Aditya Sajwa</h3>
       <p>Member</p>
     </div>
     <div class="team-member">
       <div class="member-bg" style="background-color: #FFB8A6;"><img src="Team/volen.png" class="SuppImg"></div>
       <img src="Team/member9.png" alt="Person 3">
-      <h3>Michael Johnson</h3>
+      <h3>Ayush Dwivedi</h3>
       <p>Member</p>
     </div>
 
   </div>
 <hr>
-  <footer class="footer" >
-    
-    <div class="social-icons">
-        <div class="icon1"> <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-        </div>
-        <div class="icon2"> <a href="https://www.instagram.com/environment._.thdcihet?igsh=aml3ZGVzeHh5YXd0" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="" class="social-icon"><i
-                    class="fab fa-youtube"></i></a>
-        </div>
+<footer class="footer">
+  <div class="social-icons">
+      <div class="icon1"> <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="icon2"> <a href="https://www.instagram.com/environment._.thdcihet?igsh=aml3ZGVzeHh5YXd0" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="" class="social-icon"><i
+                  class="fab fa-youtube"></i></a>
+      </div>
 
-        <!-- Add more social media icons as needed -->
-    </div>
-    <div class="footerText">
-        Thank You For visiting us.
+      <!-- Add more social media icons as needed -->
+  </div>
+  <div class="footerText">
+      Thank You For visiting us.
 
-    </div>
-    <div class="footerText" id="contact">
-        <a href="mailto:bc@gmail.com" class="mail">For support</a>
-    </div>
+  </div>
+  <div class="footerText" id="contact">
+      <a href="mailto:environmentclub@thdcihet.ac.in" class="mail">For support: environmentclub@thdcihet.ac.in</a>
+  </div>
 </footer>
 </body>
 
