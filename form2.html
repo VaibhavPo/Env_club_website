@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hackathon Problems</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,700,600&display=swap">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif !important;
+
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background-image: url('https://www.sih.gov.in/img1/software-result-bg.jpg');
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 10px;
+    }
+
+    .container {
+      background: #e0e0e0;
+      width: 90%;
+      max-width: 1000px;
+      border-radius: 20px;
+      padding: 30px 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .section {        font-family: "Poppins", sans-serif !important;
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 22px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .problem-list {
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    .problem-list li {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #555;
+    }
+
+    input, select, button {        font-family: "Poppins", sans-serif !important;
+      margin: 10px 0;
+      padding: 12px 15px;
+      width: 90%;
+      max-width: 400px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    input, select {        font-family: "Poppins", sans-serif !important;
+      background: #f5f5f5;
+    }
+
+    button {
+      font-family: "Poppins", sans-serif !important;
+      /* background: #4CAF50; */
+      background-color: #197561;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00b392;
+    }
+
+    #wheelcanvas {
+      margin-top: 30px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #spinnerResult {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+
+    @media (max-width: 600px) {
+      #wheelcanvas {
+        width: 300px;
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Hackathon: Innovative Approaches to Reach Sustainable Development Goals</h1>
+
+
+    <div class="section">
+      <h2>Team Details</h2>
+
+      <input type="text" id="teamName" placeholder="Enter Team Name" required>
+      <input type="text" id="contactNo" placeholder="Enter Contact Number" required>
+
+      <select id="problemDropdown">
+        <option value="">-- Select a problem --</option>
+        <option value="A1. Education">A1. Education</option>
+        <option value="A2. Health">A2. Health</option>
+        <option value="A3. Environment">A3. Environment</option>
+        <option value="A4. Agriculture">A4. Agriculture</option>
+        <option value="A5. Clean Water">A5. Clean Water</option>
+        <option value="A6. Inequality">A6. Inequality</option>
+      </select>
+
+      <button id="spinButton" onclick="spinWheel()" disabled>Spin the Wheel!</button>
+      <!-- <button onclick="submitData()">Submit</button> -->
+      <button onclick="downloadProblems()">Download Problem List</button>
+
+      <canvas id="wheelcanvas" width="400" height="400"></canvas>
+
+      <div id="spinnerResult">🌀 Waiting to spin...</div>
+    </div>
+
+  </div>
+
+<script>
+    const problems = [
+      "AI-powered traffic wizard",
+      "Digital health shield",
+      "Pocket-safe companion app",
+      "Gamify zero-plastic challenge",
+      "Digital Green Guardian",
+      "Micro-donation platform",
+      "Surplus food rescue system",
+      "Civic-tech reporting app"
+    ];
+  const canvas = document.getElementById('wheelcanvas');
+  const ctx = canvas.getContext('2d');
+  const numProblems = problems.length;
+  const arcSize = (2 * Math.PI) / numProblems;
+  let spinAngle = 0;
+  let spinVelocity = 0;
+  let finalSpunProblem = "";
+
+  function drawWheel() {
+    for (let i = 0; i < numProblems; i++) {
+      ctx.beginPath();
+      ctx.fillStyle = `hsl(${i * (360 / numProblems)}, 70%, 70%)`;
+      ctx.moveTo(200, 200);
+      ctx.arc(200, 200, 180, arcSize * i + spinAngle, arcSize * (i + 1) + spinAngle);
+      ctx.lineTo(200, 200);
+      ctx.fill();
+
+      // Draw Text
+      ctx.save();
+      ctx.translate(200, 200);
+      ctx.rotate(arcSize * (i + 0.5) + spinAngle);
+      ctx.textAlign = "right";
+      ctx.fillStyle = "black";
+      ctx.font = "bold  Poppins";
+      ctx.fillText(problems[i], 170, 10);
+      ctx.restore();
+    }
+
+    // Draw Arrow
+    ctx.beginPath();
+    ctx.moveTo(200, 20);
+    ctx.lineTo(190, 40);
+    ctx.lineTo(210, 40);
+    ctx.closePath();
+    ctx.fillStyle = "black";
+    ctx.fill();
+  }
+
+  function spinWheel() {
+  const selectedIndex = Math.floor(Math.random() * numProblems); // Pick a random slice
+  finalSpunProblem = problems[selectedIndex];
+
+  const targetAngle = (3 * Math.PI / 2) - (arcSize * selectedIndex); // 12 o'clock = 270°
+  const spins = 5; // full circles before landing
+  const finalAngle = (2 * Math.PI * spins) + targetAngle;
+
+  let currentAngle = spinAngle;
+  const duration = 4000; // ms
+  const startTime = performance.now();
+
+  function animateSpin(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    // Ease-out cubic for smooth deceleration
+    const eased = 1 - Math.pow(1 - progress, 3);
+    spinAngle = currentAngle + eased * (finalAngle - currentAngle);
+
+    ctx.clearRect(0, 0, 400, 400);
+    drawWheel();
+
+    if (progress < 1) {
+      requestAnimationFrame(animateSpin);
+    } else {
+      document.getElementById('spinnerResult').textContent = "✅ Assigned Problem: " + finalSpunProblem;
+      submitData();
+    }
+  }
+
+  requestAnimationFrame(animateSpin);
+}
+
+
+function submitData() {
+  const teamName = document.getElementById('teamName').value.trim();
+  const contactNo = document.getElementById('contactNo').value.trim();
+  const dropdownValue = document.getElementById('problemDropdown').value;
+
+  if (!teamName || !contactNo || !dropdownValue) {
+    alert("Please fill all fields!");
+    return;
+  }
+
+  let assignedProblem =  finalSpunProblem;
+  if (!assignedProblem) {
+    alert("Spin the wheel!");
+    return;
+  }
+
+  fetch('https://script.google.com/macros/s/AKfycbzYFuw2eOyRZM6YiQeEH-AnwgNf4Owz2WUX1vDzRg4bFeTM6MMaM6xymvENhVGgw3lR/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      teamName: teamName,
+      contactNo: contactNo,
+      pickedProblem: dropdownValue,
+      assignedProblem: assignedProblem
+    })
+  }).then(() => {
+    alert('Submission Successful! 🎉');
+    document.getElementById('teamName').value = '';
+    document.getElementById('contactNo').value = '';
+    document.getElementById('problemDropdown').value = '';
+    document.getElementById('spinnerResult').textContent = '🌀 Waiting to spin...';
+    document.getElementById('spinButton').disabled = true;
+  }).catch(err => {
+    console.error(err);
+    alert('Something went wrong!');
+  });
+}
+
+  function downloadProblems() {
+    const link = document.createElement('a');
+    link.href = 'problems.docx';
+    link.download = 'Problems_List.docx';
+    link.click();
+  }
+
+  const inputs = ['teamName', 'contactNo', 'problemDropdown'];
+  inputs.forEach(id => {
+    document.getElementById(id).addEventListener('input', checkInputs);
+  });
+
+  function checkInputs() {
+    const allFilled = inputs.every(id => document.getElementById(id).value.trim() !== '');
+    document.getElementById('spinButton').disabled = !allFilled;
+  }
+
+  drawWheel();
+</script>
+
+</body>
+</html>
